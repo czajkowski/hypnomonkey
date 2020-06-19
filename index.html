@@ -29,6 +29,28 @@
 			}
 		}
 
+		@keyframes reversehypnotize {
+			0% {
+				transform:rotate(0deg) scale(1);
+				-webkit-filter: hue-rotate(0deg);
+			}
+			25% {
+				transform:rotate(-90deg) scale(2);
+				-webkit-filter: hue-rotate(360deg);
+			}
+			50% {
+				transform:rotate(-180deg) scale(1);
+				-webkit-filter: hue-rotate(0deg);
+			}
+			75% {
+				transform:rotate(-270deg) scale(2);
+				-webkit-filter: hue-rotate(360deg);
+			}
+			100% {
+				transform:rotate(-360deg) scale(1);
+				-webkit-filter: hue-rotate(0deg);
+			}
+		}
 
 		#container {
 			position: fixed;
@@ -39,7 +61,7 @@
 			overflow: hidden;
 		}
 
-		#monkeys {
+		.monkeys {
 			position: absolute;
 			left: 50%;
 			top: 50%;
@@ -49,14 +71,26 @@
 			background-image: url('https://az545221.vo.msecnd.net/skype-faq-media/faq_content/skype/screenshots/fa12330/emoticons/monkey_80_anim_gif.gif');
 			background-repeat: repeat;
 			background-size: 48px 48px;
-		    animation:hypnotize 10s linear infinite;
+		    animation:hypnotize 20s linear infinite;
 
+		}
+
+		.monkeys:nth-child(2) {
+		  animation-duration: 30s;
+		  opacity: 0.2;
+		}
+
+		.monkeys:nth-child(3) {
+		  animation-duration: 40s;
+		  opacity: 0.2;
 		}
 	</style>
   </head>
   <body>
 	  <div id="container">
-		  <div id="monkeys"></div>
+		  <div class="monkeys"></div>
+		  <div class="monkeys"></div>
+		  <div class="monkeys"></div>
 	  </div>
   </body>
 </html>
